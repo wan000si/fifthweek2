@@ -49,24 +49,4 @@ public class GameControllerTest {
         gameController.beginGame();
         assertThat(outContent.toString(), CoreMatchers.startsWith("------Guess Number Game, You have 6 chances to guess!  ------"));
     }
-    @Test
-    public void should_game_success_then_return_the_status() throws Exception {
-        Game game = mock(Game.class);
-        when(game.checkCoutinue()).thenReturn(false);
-        when(game.checkStatus()).thenReturn("success");
-        assertEquals("success", game.checkStatus());
-    }
-    @Test
-    public void should_game_end_then_return_the_status() throws Exception {
-        Game game = mock(Game.class);
-        when(game.checkCoutinue()).thenReturn(false);
-        when(game.checkStatus()).thenReturn("fail");
-        assertEquals("fail", game.checkStatus());
-    }
-
-
-
-
-
-
 }
